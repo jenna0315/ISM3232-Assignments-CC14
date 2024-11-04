@@ -1,4 +1,5 @@
 //Task 2: Implement async/await to fetch ticket data and handle errors.
+const ticketdata = document.getElementById('ticketcontainer');
 async function fetchTicketData() {
     try{
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
