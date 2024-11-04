@@ -5,6 +5,17 @@ async function fetchTicketData() {
     if (!response.ok) {
         throw new Error('Failed to fetch ticket');
     }
+    
     const tickets = await response.json();
-    console.log('Ticket:', tickets);
+//Task 3: Dynamically display tickets on the page.
+    tickets.forEach(ticket => {
+    const ticketDiv = document.createElement('div');
+    ticketDiv.classList.add('ticket');
+    ticketDiv.innerHTML = `
+        <h2>Ticket ID: ${ticket.id}</h2>
+        <p><strong>Customer Name:</strong> User ${ticket.userId}</p>
+        <p><strong>Issue Description:</strong> ${ticket.title}</p>
+        <p><strong>Details:</strong> ${ticket.body}</p>
+    `;})
+
 }
