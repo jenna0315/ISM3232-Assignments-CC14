@@ -27,3 +27,4 @@ async function fetchTicketData() {
         <p><strong>Details:</strong> ${ticket.body}</p>
     `;})
     }
+fetchTicketData()
